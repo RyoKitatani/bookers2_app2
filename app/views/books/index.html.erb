@@ -1,0 +1,26 @@
+<h2>User info</h2>
+
+
+<h2>New book</h2>
+<%= form_with model: @book, local:true do |f| %>
+  <label>Title</label><br>
+  <%= f.text_field :title %><br>
+  <label>Opinion</label><br>
+  <%= f.text_area :opinion %><br>
+  <%= f.submit '投稿' %>
+<% end %>
+
+<table>
+  <thead>
+    <th></th>
+    <th>Title</th>
+    <th>Opinion</th>
+  </thead>
+  <% @books.each do |book| %>
+  <tbody>
+    <th></th>
+    <th><%= book.title %></th>
+    <th><%= book.opinion %></th>
+  </tbody>
+  <% end %>
+</table>
