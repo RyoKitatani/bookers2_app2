@@ -5,6 +5,16 @@
   <thead>
     <tr>
       <th></th>
+      <th></th>
     </tr>
   </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td><%= @book.title %></td>
+      <td><%= @book.opinion %></td>
+      <td><%= link_to "Edit", edit_book_path %></td>
+      <td><%= link_to "Destroy"%></td>
+    </tr>
+  </tbody>
 </table>
