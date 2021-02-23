@@ -10,7 +10,12 @@
   </thead>
   <tbody>
     <tr>
-      <td></td>
+      <td>
+        <%= link_to user_path(@user) do %>
+          <%= attachment_image_tag @user, :image, :fill, 50, 50, format: 'jpeg' %>
+          <p><%= @user.name %></p>
+        <% end %>
+      </td>
       <td><%= @book.title %></td>
       <td><%= @book.opinion %></td>
       <td><%= link_to "Edit", edit_book_path %></td>
