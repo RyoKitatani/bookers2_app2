@@ -19,7 +19,7 @@
       <td><%= @books.opinion %></td>
       <% if @books.user == current_user %>
         <td><%= link_to "Edit", edit_book_path %></td>
-        <td><%= link_to "Destroy"%></td>
+        <td><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に削除していいですか？" %></td>
       <% end %>
     </tr>
   </tbody>
