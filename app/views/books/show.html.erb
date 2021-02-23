@@ -1,7 +1,6 @@
-<%= render "books/list", books: @books %>
+<%= render "books/list", book: @book, user: @user %>
 
 <h2>Book detail</h2>
-<table>
   <thead>
     <tr>
       <th></th>
@@ -16,10 +15,12 @@
           <p><%= @user.name %></p>
         <% end %>
       </td>
-      <td><%= @book.title %></td>
-      <td><%= @book.opinion %></td>
-      <td><%= link_to "Edit", edit_book_path %></td>
-      <td><%= link_to "Destroy"%></td>
+      <td><%= @books.title %></td>
+      <td><%= @books.opinion %></td>
+      <% if @books.user == current_user %>
+        <td><%= link_to "Edit", edit_book_path %></td>
+        <td><%= link_to "Destroy"%></td>
+      <% end %>
     </tr>
   </tbody>
 </table>

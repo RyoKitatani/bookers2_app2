@@ -3,24 +3,24 @@
 <table>
   <tbody>
     <tr>
-      <td><%= attachment_image_tag @user, :image, :fill, 50, 50, format: 'jpeg' %></td>
+      <td><%= attachment_image_tag user, :image, :fill, 50, 50, format: 'jpeg' %></td>
     </tr>
     <tr>
       <td>name</td>
-      <td><%= @user.name %></td>
+      <td><%= user.name %></td>
     </tr>
     <tr>
       <td>introduction</td>
-      <td><%= @user.introduction %></td>
+      <td><%= user.introduction %></td>
     </tr>
   </tbody>
 </table>
-<% if @user.id == current_user.id %>
-  <p><%= link_to "#", edit_user_path(@user) %></p>
+<% if user.id == current_user.id %>
+  <p><%= link_to "#", edit_user_path(user) %></p>
 <% end %>
 
 <h2>New book</h2>
-<%= form_with model: @book, local:true do |f| %>
+<%= form_with model: book, local:true do |f| %>
   <label>Title</label><br>
   <%= f.text_field :title %><br>
   <label>Opinion</label><br>
